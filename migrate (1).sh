@@ -9,12 +9,12 @@ MIGRATIONS_DIR="/c/Users/student/RPP_laba2/scripts"
 
 #Функция для выполнения SQL-файлов
 run_sql() {
-    PGPASSWORD="postgres" /c/Program\ Files/PostgreSQL/16/bin/psql.exe -U "$DB_USER" -d "$DB_NAME" -p "$DB_PORT" -f "$1"
+    PASSWORD="postgres" /c/Program\ Files/PostgreSQL/16/bin/psql.exe -U "$DB_USER" -d "$DB_NAME" -p "$DB_PORT" -f "$1"
 }
 
 #для выполнения SQL-запросов
 run_sql_c() {
-    PGPASSWORD="postgres" /c/Program\ Files/PostgreSQL/16/bin/psql.exe -U "$DB_USER" -d "$DB_NAME" -p "$DB_PORT" -t -c "$1"
+    PASSWORD="postgres" /c/Program\ Files/PostgreSQL/16/bin/psql.exe -U "$DB_USER" -d "$DB_NAME" -p "$DB_PORT" -t -c "$1"
 }
 
 #таблицы для хранения информации о применённых миграциях
