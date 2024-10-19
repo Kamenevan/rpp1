@@ -39,7 +39,8 @@ for sql_file in "$MIGRATIONS_PATH"/*.sql; do
         run_sql "$sql_file"
 
 #Сохраняем информацию о примененной миграции
-        run_sql_c "INSERT INTO migrations (migration_name) VALUES ('$migration_name');"
+        escaped_migration_name=$(printf "%q" "$migration_name")
+        run_sql_c "INSERT INTO migrations (migration_name) VALUES ('$escaped_migration_name');
     fi
 done
 
